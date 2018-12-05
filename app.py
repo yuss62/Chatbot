@@ -29,7 +29,7 @@ def webhook():
 def reply(msg):
 	url = 'https://api.groupme.com/v3/bots/post'
 	data = {
-		'bot_id'		: bot_id,
+		'bot_id'		: dac6f9fe24fe7ffa8ab566d96d,
 		'text'			: msg
 	}
 	request = Request(url, urlencode(data).encode())
@@ -39,7 +39,7 @@ def reply(msg):
 def reply_with_image(msg, imgURL):
 	url = 'https://api.groupme.com/v3/bots/post'
 	data = {
-		'bot_id'		: bot_id,
+		'bot_id'		: dac6f9fe24fe7ffa8ab566d96d,
 		'text'			: msg,
 		'attachments'	: [{"type": "image", "url":imgURL}]
 	}
