@@ -18,7 +18,7 @@ def webhook():
 	if 'Halo' in message['text'].lower() and not sender_is_bot(message): # jika pesanya 'halo' maka diindikasikan pengirim chat bukanlah bot
 		reply('Hay :)')
 		
-	elif 'deskripsi' in message['text'].lower() and not sender_is_bot(message):
+	if 'deskripsi' in message['text'].lower() and not sender_is_bot(message):
 		reply('ini adalah layanan balasan chat otomatis')
 	
 	return "ok", 200
