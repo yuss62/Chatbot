@@ -1,3 +1,6 @@
+# RESOURCE: http://www.apnorton.com/blog/2017/02/28/How-I-wrote-a-Groupme-Chatbot-in-24-hours/
+
+
 # IMPORTS
 import os
 import json
@@ -15,12 +18,8 @@ def webhook():
 	# 'message' is an object that represents a single GroupMe message.
 	message = request.get_json()
 
-	if 'halo' in message['text'].lower() and not sender_is_bot(message): # if message contains 'groot', ignoring case, and sender is not a bot...
-		reply('Hay, selamat datang di layanan balasan pesan otomatis.')
-		
-	else 'deskripsi' in message['text'].lower() and not sender_is_bot(message): # if message contains 'groot', ignoring case, and sender is not a bot...
-		reply('Bot ini hanya menanggapi permintaan jawaban yang sudah di inputkan')
-	
+	# TODO: Your bot's logic here
+
 	return "ok", 200
 
 ################################################################################
