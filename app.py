@@ -14,13 +14,13 @@ bot_id = "dac6f9fe24fe7ffa8ab566d96d"
 def webhook():
 	# 'message' is an object that represents a single GroupMe message.
 	message = request.get_json()
-
-	if 'Halo' in message['text'].lower():
-		reply('Hay :)')
-		
+	
 	if 'deskripsi' in message['text'].lower() and not sender_is_bot(message):
 		reply('ini adalah layanan balasan chat otomatis')
 	
+	else 'halo' in message['text'].lower() and not sender_is_bot(message):
+		reply('halo')
+		
 	return "ok", 200
 
 ################################################################################
