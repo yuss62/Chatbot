@@ -1,6 +1,3 @@
-# RESOURCE: http://www.apnorton.com/blog/2017/02/28/How-I-wrote-a-Groupme-Chatbot-in-24-hours/
-
-
 # IMPORTS
 import os
 import json
@@ -23,10 +20,7 @@ def webhook():
 		
 	elif 'deskripsi' in message['text'].lower() and not sender_is_bot(message):
 		reply('ini adalah layanan balasan chat otomatis')
-		
-	else 'jumlah bulan dalam 1 tahun' in message['text'].lower() and not sender_is_bot(message): 
-		reply('12 bulan')
-		
+	
 	return "ok", 200
 
 ################################################################################
