@@ -17,6 +17,12 @@ def webhook():
 
 	if 'halo' in message['text'].lower() and not sender_is_bot(message): # if message contains 'groot', ignoring case, and sender is not a bot...
 		reply('Hay, selamat datang di layanan balasan pesan otomatis.')
+		
+	elif 'deskripsi' in message['text'].lower() and not sender_is_bot(message): # if message contains 'groot', ignoring case, and sender is not a bot...
+		reply('Bot ini hanya menanggapi permintaan jawaban yang sudah di inputkan')
+		
+	else 'jam berapa sekarang?' in message['text'].lower() and not sender_is_bot(message): # if message contains 'groot', ignoring case, and sender is not a bot...
+		reply('sekarang tepat pukul 20:00')
 
 	return "ok", 200
 
