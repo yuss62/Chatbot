@@ -1,6 +1,3 @@
-# RESOURCE: http://www.apnorton.com/blog/2017/02/28/How-I-wrote-a-Groupme-Chatbot-in-24-hours/
-
-
 # IMPORTS
 import os
 import json
@@ -9,7 +6,7 @@ from urllib.request import Request, urlopen
 from flask import Flask, request
 
 app = Flask(__name__)
-bot_id = "dac6f9fe24fe7ffa8ab566d96d"
+bot_id = "REPLACE THIS WITH YOUR BOT ID ONCE BOT IS ADDED TO THE CHAT"
 
 # Called whenever the app's callback URL receives a POST request
 # That'll happen every time a message is sent in the group
@@ -18,8 +15,8 @@ def webhook():
 	# 'message' is an object that represents a single GroupMe message.
 	message = request.get_json()
 
-	if 'groot' in message['text'].lower() and not sender_is_bot(message): # if message contains 'groot', ignoring case, and sender is not a bot...
-		reply('I am Groot.')
+	if 'halo' in message['text'].lower() and not sender_is_bot(message): # if message contains 'groot', ignoring case, and sender is not a bot...
+		reply('Hay, selamat datang di layanan balasan pesan otomatis.')
 
 	return "ok", 200
 
@@ -38,13 +35,34 @@ def reply(msg):
 # Send a message with an image attached in the groupchat
 def reply_with_image(msg, imgURL):
 	url = 'https://api.groupme.com/v3/bots/post'
+	urlOnGroupMeService = upload_image_to_groupme(imgURL)
 	data = {
 		'bot_id'		: dac6f9fe24fe7ffa8ab566d96d,
 		'text'			: msg,
-		'attachments'	: [{"type": "image", "url":imgURL}]
+		'picture_url'		: urlOnGroupMeService
 	}
 	request = Request(url, urlencode(data).encode())
 	json = urlopen(request).read().decode()
+	
+# Uploads image to GroupMe's services and returns the new URL
+def upload_image_to_groupme(imgURL):
+	imgRequest = requests.get(imgURL, stream=True)
+	filename = 'temp.png'
+	postImage = None
+	if imgRequest.status_code == 200:
+		# Save Image
+		with open(filename, 'wb') as image:
+			for chunk in imgRequest:
+				image.write(chunk)
+		# Send Image
+		headers = {'content-type': 'application/json'}
+		url = 'https://image.groupme.com/pictures'
+		files = {'file': open(filename, 'rb')}
+		payload = {'access_token': 'eo7JS8SGD49rKodcvUHPyFRnSWH1IVeZyOqUMrxU'}
+		r = requests.post(url, files=files, params=payload)
+		imageurl = r.json()['payload']['url']
+		os.remove(filename)
+		return imageurl
 
 # Checks whether the message sender is a bot
 def sender_is_bot(message):
