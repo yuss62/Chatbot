@@ -17,9 +17,20 @@ def webhook():
 	
 	if 'info' in message['text'].lower() and not sender_is_bot(message):
 		reply('ketik perintah-perintah berikut untuk info lebih lanjut: 1. "nama" 2. "nim" 3. "alamat" ')
-			
+	
 	return "ok", 200
 
+	
+def webhook():
+	# 'message' is an object that represents a single GroupMe message.
+	message = request.get_json()
+	
+	if 'nama' in message['text'].lower() and not sender_is_bot(message):
+		reply('Zebedeus Cheyso')
+		reply('1605551098')'
+	return "ok", 200
+	
+		
 ################################################################################
 
 # Send a message in the groupchat
