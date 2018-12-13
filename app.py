@@ -17,14 +17,7 @@ def webhook():
 	
 	if 'info' in message['text'].lower() and not sender_is_bot(message):
 		reply('ketik perintah-perintah berikut untuk info lebih lanjut: 1. "nama" 2. "nim" 3. "alamat" ')
-	
-	elif 'nama' in message['text'].lower() and not sender_is_bot(message):
-		reply('Zebedeus Cheyso')
-	elif 'nim' in message['text'].lower() and not sender_is_bot(message):
-		reply('1605551098')'
-	elif 'alamat' in message['text'].lower() and not sender_is_bot(message):
-		reply('jalan nuansa udayana utara IV/5')
-		
+			
 	return "ok", 200
 
 ################################################################################
