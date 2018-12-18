@@ -16,91 +16,34 @@ def webhook():
 	message = request.get_json()
 	
 	if 'info' in message['text'].lower() and not sender_is_bot(message):
-		reply('ketik perintah-perintah berikut untuk info lebih lanjut "Nim dari 091-099": 1. "Nama#16xxx" 2. "alamat#16xxx" 3. "golongandarah#nimxxx"')
+		reply('ketik perintah-perintah berikut untuk info lebih lanjut "Nim dari 091-099" "Nama 16xxx"')
 		
-	elif 'nama#16097' in message['text'].lower() and not sender_is_bot(message):
+	elif 'nama 16097' in message['text'].lower() and not sender_is_bot(message):
 		reply('Reyhan Todo')
 		
-	elif 'nama#16099' in message['text'].lower() and not sender_is_bot(message):
+	elif 'nama 16099' in message['text'].lower() and not sender_is_bot(message):
 		reply('Revo daniswara')
 		
-	elif 'nama#16091' in message['text'].lower() and not sender_is_bot(message):
+	elif 'nama 16091' in message['text'].lower() and not sender_is_bot(message):
 		reply('Oka Wisnu')
 		
-	elif 'nama#16092' in message['text'].lower() and not sender_is_bot(message):
+	elif 'nama 16092' in message['text'].lower() and not sender_is_bot(message):
 		reply('Andika verdiana')
 		
-	elif 'nama#16093' in message['text'].lower() and not sender_is_bot(message):
+	elif 'nama 16093' in message['text'].lower() and not sender_is_bot(message):
 		reply('Kevin Bakkara')
 	
-	elif 'nama#16094' in message['text'].lower() and not sender_is_bot(message):
+	elif 'nama 16094' in message['text'].lower() and not sender_is_bot(message):
 		reply('Dode Yoga')
 		
-	elif 'nama#16095' in message['text'].lower() and not sender_is_bot(message):
+	elif 'nama 16095' in message['text'].lower() and not sender_is_bot(message):
 		reply('Veniiy Tallo')
 		
-	elif 'nama#16096' in message['text'].lower() and not sender_is_bot(message):
+	elif 'nama 16096' in message['text'].lower() and not sender_is_bot(message):
 		reply('Shereen delia')
 		
-	elif 'alamat#16097' in message['text'].lower() and not sender_is_bot(message):
-		reply('Jl. sudirman')
-		
-	elif 'alamat#16092' in message['text'].lower() and not sender_is_bot(message):
-		reply('Jl. jati negara')
-	
-	elif 'alamat#16091' in message['text'].lower() and not sender_is_bot(message):
-		reply('Jl. Pulau Moyo')
-	
-	elif 'alamat#16093' in message['text'].lower() and not sender_is_bot(message):
-		reply('Jl. nuansa udayana')
-		
-	elif 'alamat#16094' in message['text'].lower() and not sender_is_bot(message):
-		reply('Jl. benjamin')
-		
-	elif 'alamat#16095' in message['text'].lower() and not sender_is_bot(message):
-		reply('Jl. terang bulan')
-		
-	elif 'alamat#16096' in message['text'].lower() and not sender_is_bot(message):
-		reply('Jl. pamulang')
-		
-	elif 'alamat#16098' in message['text'].lower() and not sender_is_bot(message):
-		reply('Jl. nandena')
-	
-	elif 'alamat#16099' in message['text'].lower() and not sender_is_bot(message):
-		reply('Jl. melati')
-	
-	elif 'alamat#16097' in message['text'].lower() and not sender_is_bot(message):
-		reply('Jl. merpati')
-	
-	elif 'Golongandarah#16091' in message['text'].lower() and not sender_is_bot(message):
-		reply('AB')
-	
-	elif 'golongandarah#16097' in message['text'].lower() and not sender_is_bot(message):
-		reply('A')
-		
-	elif 'golongandarah#16092' in message['text'].lower() and not sender_is_bot(message):
-		reply('A')
-		
-	elif 'golongandarah#16093' in message['text'].lower() and not sender_is_bot(message):
-		reply('B')
-		
-	elif 'golongandarah#16094' in message['text'].lower() and not sender_is_bot(message):
-		reply('B')
-		
-	elif 'golongandarah#16095' in message['text'].lower() and not sender_is_bot(message):
-		reply('O')
-		
-	elif 'golongandarah#16096' in message['text'].lower() and not sender_is_bot(message):
-		reply('A')
-		
-	elif 'golongandarah#16098' in message['text'].lower() and not sender_is_bot(message):
-		reply('AB')
-	
-	elif 'golongandarah#16099' in message['text'].lower() and not sender_is_bot(message):
-		reply('O')
-	
-	elif 'golongandarah#16097' in message['text'].lower() and not sender_is_bot(message):
-		reply('B')
+	elif 'nama 16098' in message['text'].lower() and not sender_is_bot(message):
+		reply('Yuss Cheyso')
 	
 	return "ok", 200
 	
