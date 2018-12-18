@@ -44,6 +44,9 @@ def webhook():
 		
 	elif 'nama 16098' in message['text'].lower() and not sender_is_bot(message):
 		reply('Yuss Cheyso')
+		
+	elif 'alamat16098' in message['text'].lower() and not sender_is_bot(message):
+		reply('jl. sudirman')
 	
 	return "ok", 200
 	
