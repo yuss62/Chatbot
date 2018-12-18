@@ -16,7 +16,7 @@ def webhook():
 	message = request.get_json()
 	
 	if 'info' in message['text'].lower() and not sender_is_bot(message):
-		reply('ketik perintah-perintah berikut untuk info lebih lanjut \Nim dari 091-099: 1. "Nim 16xxx" 2. "alamat 16xxx" 3. "Gol darah nimxxx"')
+		reply('ketik perintah-perintah berikut untuk info lebih lanjut "Nim dari 091-099": 1. "Nim 16xxx" 2. "alamat 16xxx" 3. "Gol darah nimxxx"')
 		
 	elif '16097' in message['text'].lower() and not sender_is_bot(message):
 		reply('Reyhan Todo')
