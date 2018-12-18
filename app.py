@@ -17,13 +17,6 @@ def webhook():
 	
 	if 'info' in message['text'].lower() and not sender_is_bot(message):
 		reply('ketik perintah-perintah berikut untuk info lebih lanjut \Nim dari 091-099: 1. "Nim 16xxx" 2. "alamat 16xxx" 3. "Gol darah nimxxx"')
-	
-	
-	elif 'nim' in message['text'].lower() and not sender_is_bot(message):
-		reply('1605551098')
-	
-	elif 'alamat' in message['text'].lower() and not sender_is_bot(message):
-		reply('jalan nuansa udayana utara no IV/5')
 		
 	elif '16097' in message['text'].lower() and not sender_is_bot(message):
 		reply('Reyhan Todo')
@@ -65,7 +58,7 @@ def webhook():
 		reply('Jl. benjamin')
 		
 	elif 'alamat 16095' in message['text'].lower() and not sender_is_bot(message):
-		reply('Jl. terang bulang')
+		reply('Jl. terang bulan')
 		
 	elif 'alamat 16096' in message['text'].lower() and not sender_is_bot(message):
 		reply('Jl. pamulang')
@@ -77,7 +70,7 @@ def webhook():
 		reply('Jl. melati')
 	
 	elif 'alamat 16097' in message['text'].lower() and not sender_is_bot(message):
-		reply('Jl. sudirman')
+		reply('Jl. merpati')
 	
 	elif 'Gol darah 16091' in message['text'].lower() and not sender_is_bot(message):
 		reply('AB')
