@@ -16,30 +16,30 @@ def webhook():
 	message = request.get_json()
 	
 	if 'info' in message['text'].lower() and not sender_is_bot(message):
-		reply('ketik perintah-perintah berikut untuk info lebih lanjut "Nim dari 091-099": 1. "Nim 16xxx" 2. "alamat 16xxx" 3. "Gol darah nimxxx"')
+		reply('ketik perintah-perintah berikut untuk info lebih lanjut "Nim dari 091-099": 1. "Nama 16xxx" 2. "alamat 16xxx" 3. "Gol darah nimxxx"')
 		
-	elif '16097' in message['text'].lower() and not sender_is_bot(message):
+	elif 'nama 16097' in message['text'].lower() and not sender_is_bot(message):
 		reply('Reyhan Todo')
 		
-	elif '16099' in message['text'].lower() and not sender_is_bot(message):
+	elif 'nama 16099' in message['text'].lower() and not sender_is_bot(message):
 		reply('Revo daniswara')
 		
-	elif '16091' in message['text'].lower() and not sender_is_bot(message):
+	elif 'nama 16091' in message['text'].lower() and not sender_is_bot(message):
 		reply('Oka Wisnu')
 		
-	elif '16092' in message['text'].lower() and not sender_is_bot(message):
+	elif 'nama 16092' in message['text'].lower() and not sender_is_bot(message):
 		reply('Andika verdiana')
 		
-	elif '16093' in message['text'].lower() and not sender_is_bot(message):
+	elif 'nama 16093' in message['text'].lower() and not sender_is_bot(message):
 		reply('Kevin Bakkara')
 	
-	elif '16094' in message['text'].lower() and not sender_is_bot(message):
+	elif 'nama 16094' in message['text'].lower() and not sender_is_bot(message):
 		reply('Dode Yoga')
 		
-	elif '16095' in message['text'].lower() and not sender_is_bot(message):
+	elif 'nama 16095' in message['text'].lower() and not sender_is_bot(message):
 		reply('Veniiy Tallo')
 		
-	elif '16096' in message['text'].lower() and not sender_is_bot(message):
+	elif 'nama 16096' in message['text'].lower() and not sender_is_bot(message):
 		reply('Shereen delia')
 		
 	elif 'alamat 16097' in message['text'].lower() and not sender_is_bot(message):
