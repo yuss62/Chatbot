@@ -16,25 +16,105 @@ def webhook():
 	message = request.get_json()
 	
 	if 'info' in message['text'].lower() and not sender_is_bot(message):
-		reply('ketik perintah-perintah berikut untuk info lebih lanjut: 1. "nama" 2. "nim" 3. "kampus" 4. "alamat" ')
+		reply('ketik perintah-perintah berikut untuk info lebih lanjut \Nim dari 091-099: 1. "Nim 16xxx" 2. "alamat 16xxx" 3. "Gol darah nimxxx"')
 	
-	elif 'nama' in message['text'].lower() and not sender_is_bot(message):
-		reply('Zebedeus Cheyso')
-		
+	
 	elif 'nim' in message['text'].lower() and not sender_is_bot(message):
 		reply('1605551098')
 	
-	elif 'kampus' in message['text'].lower() and not sender_is_bot(message):
-		reply('Universitas Udayana')
-		
 	elif 'alamat' in message['text'].lower() and not sender_is_bot(message):
 		reply('jalan nuansa udayana utara no IV/5')
+		
+	elif '16097' in message['text'].lower() and not sender_is_bot(message):
+		reply('Reyhan Todo')
+		
+	elif '16099' in message['text'].lower() and not sender_is_bot(message):
+		reply('Revo daniswara')
+		
+	elif '16091' in message['text'].lower() and not sender_is_bot(message):
+		reply('Oka Wisnu')
+		
+	elif '16092' in message['text'].lower() and not sender_is_bot(message):
+		reply('Andika verdiana')
+		
+	elif '16093' in message['text'].lower() and not sender_is_bot(message):
+		reply('Kevin Bakkara')
+	
+	elif '16094' in message['text'].lower() and not sender_is_bot(message):
+		reply('Dode Yoga')
+		
+	elif '16095' in message['text'].lower() and not sender_is_bot(message):
+		reply('Veniiy Tallo')
+		
+	elif '16096' in message['text'].lower() and not sender_is_bot(message):
+		reply('Shereen delia')
+		
+	elif 'alamat 16097' in message['text'].lower() and not sender_is_bot(message):
+		reply('Jl. sudirman')
+		
+	elif 'alamat 16092' in message['text'].lower() and not sender_is_bot(message):
+		reply('Jl. jati negara')
+	
+	elif 'alamat 16091' in message['text'].lower() and not sender_is_bot(message):
+		reply('Jl. Pulau Moyo')
+	
+	elif 'alamat 16093' in message['text'].lower() and not sender_is_bot(message):
+		reply('Jl. nuansa udayana')
+		
+	elif 'alamat 16094' in message['text'].lower() and not sender_is_bot(message):
+		reply('Jl. benjamin')
+		
+	elif 'alamat 16095' in message['text'].lower() and not sender_is_bot(message):
+		reply('Jl. terang bulang')
+		
+	elif 'alamat 16096' in message['text'].lower() and not sender_is_bot(message):
+		reply('Jl. pamulang')
+		
+	elif 'alamat 16098' in message['text'].lower() and not sender_is_bot(message):
+		reply('Jl. nandena')
+	
+	elif 'alamat 16099' in message['text'].lower() and not sender_is_bot(message):
+		reply('Jl. melati')
+	
+	elif 'alamat 16097' in message['text'].lower() and not sender_is_bot(message):
+		reply('Jl. sudirman')
+	
+	elif 'Gol darah 16091' in message['text'].lower() and not sender_is_bot(message):
+		reply('AB')
+	
+	elif 'Gol darah 16097' in message['text'].lower() and not sender_is_bot(message):
+		reply('A')
+		
+	elif 'Gol darah 16092' in message['text'].lower() and not sender_is_bot(message):
+		reply('A')
+		
+	elif 'Gol darah 16093' in message['text'].lower() and not sender_is_bot(message):
+		reply('B')
+		
+	elif 'Gol darah 16094' in message['text'].lower() and not sender_is_bot(message):
+		reply('B')
+		
+	elif 'Gol darah 16095' in message['text'].lower() and not sender_is_bot(message):
+		reply('O')
+		
+	elif 'Gol darah 16096' in message['text'].lower() and not sender_is_bot(message):
+		reply('A')
+		
+	elif 'Gol darah 16098' in message['text'].lower() and not sender_is_bot(message):
+		reply('AB')
+	
+	elif 'Gol darah 16099' in message['text'].lower() and not sender_is_bot(message):
+		reply('O')
+	
+	elif 'Gol darah 16097' in message['text'].lower() and not sender_is_bot(message):
+		reply('B')
+	
 	return "ok", 200
 	
 		
 ################################################################################
 
-# Send a message in the groupchat
+# Kirim Pesan ke grup
 def reply(msg):
 	url = 'https://api.groupme.com/v3/bots/post'
 	data = {
@@ -44,7 +124,7 @@ def reply(msg):
 	request = Request(url, urlencode(data).encode())
 	json = urlopen(request).read().decode()
 
-# Send a message with an image attached in the groupchat
+# Kirim pesan dengan gambar
 def reply_with_image(msg, imgURL):
 	url = 'https://api.groupme.com/v3/bots/post'
 	urlOnGroupMeService = upload_image_to_groupme(imgURL)
@@ -56,17 +136,17 @@ def reply_with_image(msg, imgURL):
 	request = Request(url, urlencode(data).encode())
 	json = urlopen(request).read().decode()
 	
-# Uploads image to GroupMe's services and returns the new URL
+# Upload gambar dan return URL
 def upload_image_to_groupme(imgURL):
 	imgRequest = requests.get(imgURL, stream=True)
 	filename = 'temp.png'
 	postImage = None
 	if imgRequest.status_code == 200:
-		# Save Image
+		# Save Gambar
 		with open(filename, 'wb') as image:
 			for chunk in imgRequest:
 				image.write(chunk)
-		# Send Image
+		# Send Gambar
 		headers = {'content-type': 'application/json'}
 		url = 'https://image.groupme.com/pictures'
 		files = {'file': open(filename, 'rb')}
@@ -76,6 +156,6 @@ def upload_image_to_groupme(imgURL):
 		os.remove(filename)
 		return imageurl
 
-# Checks whether the message sender is a bot
+# Validasi pesan BOT
 def sender_is_bot(message):
 	return message['sender_type'] == "bot"
