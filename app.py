@@ -15,38 +15,17 @@ def webhook():
 	# 'message' is an object that represents a single GroupMe message.
 	message = request.get_json()
 	
-	if 'info' in message['text'].lower() and not sender_is_bot(message):
-		reply('ketik perintah-perintah berikut untuk info lebih lanjut "Nim dari 091-099" "Nama 16xxx"')
+	if 'iyah kenapa?' in message['text'].lower() and not sender_is_bot(message):
+		reply('kamu kok udah beda yaa kak')
 		
-	elif 'nama 16097' in message['text'].lower() and not sender_is_bot(message):
-		reply('Reyhan Todo')
+	elif 'beda apanya?' in message['text'].lower() and not sender_is_bot(message):
+		reply('yah beda, kk udah gk hub aku lagi :(   kk udah punya yg baru yak?')
 		
-	elif 'nama 16099' in message['text'].lower() and not sender_is_bot(message):
-		reply('Revo daniswara')
-		
-	elif 'nama 16091' in message['text'].lower() and not sender_is_bot(message):
-		reply('Oka Wisnu')
-		
-	elif 'nama 16092' in message['text'].lower() and not sender_is_bot(message):
-		reply('Andika verdiana')
-		
-	elif 'nama 16093' in message['text'].lower() and not sender_is_bot(message):
-		reply('Kevin Bakkara')
+	elif 'Hmmm napa nanya gitu?' in message['text'].lower() and not sender_is_bot(message):
+		reply('kak, ade udah g ada kesempatan lagi yaa?')
 	
-	elif 'nama 16094' in message['text'].lower() and not sender_is_bot(message):
-		reply('Dode Yoga')
-		
-	elif 'nama 16095' in message['text'].lower() and not sender_is_bot(message):
-		reply('Veniiy Tallo')
-		
-	elif 'nama 16096' in message['text'].lower() and not sender_is_bot(message):
-		reply('Shereen delia')
-		
-	elif 'nama 16098' in message['text'].lower() and not sender_is_bot(message):
-		reply('Yuss Cheyso')
-		
-	elif 'alamat16098' in message['text'].lower() and not sender_is_bot(message):
-		reply('jl. sudirman')
+	elif 'kesempatan apa lagi dek?' in message['text'].lower() and not sender_is_bot(message):
+		reply('yah, balik kyak dulu lagi :(')
 	
 	return "ok", 200
 	
